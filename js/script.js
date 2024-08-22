@@ -4,7 +4,7 @@ const resultsPerPage = 12;
 
 function searchMovie(page = 1) {
   const query = document.getElementById('search-input').value;
-  const url = `http://www.omdbapi.com/?apikey=4046b94d&s=${encodeURIComponent(query)}&page=${page}`;
+  const url = `https://www.omdbapi.com/?apikey=4046b94d&s=${encodeURIComponent(query)}&page=${page}`;
 
   fetch(url, {
     method: 'GET'
