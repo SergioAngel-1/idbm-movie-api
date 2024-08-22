@@ -58,3 +58,9 @@
     background-color: #ade6c3;
     border-color: #42c775;
 }
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Una columna por fila en dispositivos móviles */
+    }
+}
