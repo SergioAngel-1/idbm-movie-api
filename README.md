@@ -1,35 +1,34 @@
-# Movie Search App
+# Buscador de Películas
 
-Una aplicación web moderna para buscar y explorar películas usando la API de TMDB (The Movie Database). Construida con React, TypeScript, y Tailwind CSS.
+Una aplicación web moderna para buscar y explorar películas utilizando la API de OMDB. Construida con React, TypeScript y Tailwind CSS.
 
 [Movie Search App](https://moviesearchibdm.netlify.app/)
 
 ## Características
 
-- 🎬 Muestra las películas más populares
-- 🔍 Búsqueda en tiempo real
-- 📱 Diseño responsivo
+- 🎬 Muestra películas populares del 2024
+- 🔍 Búsqueda en tiempo real con debouncing
+- 📱 Diseño totalmente responsive
 - 🎨 Interfaz moderna y minimalista
-- 🔄 Carga infinita para películas populares
-- 📝 Detalles completos de cada película
-- 🌙 Soporte para modo oscuro
-- 🌐 Soporte multilenguaje (Español)
+- 🔄 Funcionalidad de "Cargar más películas"
+- 📝 Modal detallado de información
+- 🌙 Soporte para tema claro/oscuro
+- 🎯 Protección con Error Boundary
+- ⚡ Rendimiento rápido y optimizado
 
 ## Tecnologías
 
 - React 18
 - TypeScript
 - Tailwind CSS
-- shadcn/ui
-- TMDB API
+- Componentes shadcn/ui
+- API de OMDB
 - Vite
+- Iconos de Lucide React
 
 ## Inicio Rápido
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/yourusername/movie-search-app.git
-
 # Instalar dependencias
 npm install
 
@@ -44,43 +43,47 @@ npm run build
 
 ```
 src/
-  ├── components/     # Componentes React
-  │   ├── ui/        # Componentes de UI reutilizables
-  │   ├── MovieCard  # Tarjeta de película
-  │   └── MovieDetails # Detalles de película
-  ├── hooks/         # Hooks personalizados
-  ├── lib/          # Utilidades y configuración
-  └── App.tsx       # Componente principal
+  ├── components/        # Componentes React
+  │   ├── ui/           # Componentes de shadcn/ui
+  │   ├── MovieCard     # Componente de tarjeta de película
+  │   ├── MovieDetails  # Diálogo de detalles de película
+  │   ├── ThemeToggle   # Selector de tema
+  │   ├── ThemeProvider # Proveedor de contexto para tema
+  │   └── ErrorBoundary # Componente de manejo de errores
+  ├── hooks/            # Hooks personalizados
+  │   ├── use-debounce  # Debouncing para búsqueda
+  │   └── use-toast     # Notificaciones toast
+  ├── lib/              # Utilidades y APIs
+  │   ├── omdb.ts       # Integración con API OMDB
+  │   └── utils.ts      # Funciones auxiliares
+  └── App.tsx           # Componente principal
 ```
 
-## Variables de Entorno
+## Integración con API
 
-```env
-VITE_TMDB_API_KEY=your_api_key_here
-```
+La aplicación utiliza la API de OMDB (Open Movie Database) para obtener datos de películas. Principales endpoints:
 
-## API
+- Búsqueda de películas por título
+- Obtención de información detallada
+- Exploración de películas por año
 
-La aplicación utiliza la API de TMDB para obtener datos de películas. Las principales endpoints utilizados son:
+Nota: La clave de API está actualmente hardcodeada en la aplicación con fines demostrativos. En un entorno de producción, debería moverse a variables de entorno.
 
-- `/movie/popular` - Obtener películas populares
-- `/search/movie` - Buscar películas
-- `/movie/{id}` - Obtener detalles de una película
+## Características en Detalle
 
-## Contribuir
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+- **Búsqueda en Tiempo Real**: Implementa debouncing para optimizar llamadas a la API
+- **Carga Infinita**: Funcionalidad de "Cargar más" para explorar películas
+- **Diseño Responsive**: Optimizado para todos los tamaños de pantalla
+- **Soporte de Temas**: Modo claro/oscuro con detección automática del sistema
+- **Manejo de Errores**: Recuperación elegante con error boundaries
+- **Accesibilidad**: Construido pensando en la accesibilidad usando componentes shadcn/ui
 
 ## Licencia
 
-Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
 ## Créditos
 
-- Datos de películas proporcionados por [TMDB](https://www.themoviedb.org/)
-- UI Components por [shadcn/ui](https://ui.shadcn.com/)
-- Iconos por [Lucide](https://lucide.dev/)
+- Datos de películas proporcionados por [OMDB API](http://www.omdbapi.com/)
+- Componentes UI por [shadcn/ui](https://ui.shadcn.com/)
+- Iconos por [Lucide React](https://lucide.dev/)
