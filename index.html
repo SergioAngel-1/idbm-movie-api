@@ -1,51 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-
-  <title>Api IMDb</title>
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 60px;">
-    </div>
-  </nav>
-
-  <div class="container">
-    <div class="row mt-3 justify-content-center">
-      <div class="col-md-8">
-        <h1 class="text-center">Buscar película</h1>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Título de película..." id="search-input" />
-          <div class="input-group-append">
-            <button class="btn btn-dark" type="button" id="search-button">
-              Buscar...
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <hr />
-    <div>
-      <div id="movies-container" class="grid-container">
-      </div>
-      <div id="pagination-controls" class="pagination-controls" style="display:none">
-        <button id="prev-page" class="prev-page" disabled>Anterior</button>
-        <button id="next-page" class="next-page">Siguiente</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/script.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/movie-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieFinder - Buscador de Películas</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
