@@ -2,7 +2,7 @@
 
 Una aplicación web moderna para buscar y explorar películas usando la API de TMDB (The Movie Database). Construida con React, TypeScript, y Tailwind CSS.
 
-![Movie Search App](https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1200)
+[Movie Search App]()
 
 ## Características
 
